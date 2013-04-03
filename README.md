@@ -11,3 +11,8 @@ The services launched when logging in are:
     - gnome-session
     - gnome-keyring-daemon
     - gnome-screensaver
+
+Screenshot
+==========
+
+![Alt text](screenshots/Awesome_lua.png?raw=true)
