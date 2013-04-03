@@ -12,6 +12,12 @@ The services launched when logging in are:
     - gnome-keyring-daemon
     - gnome-screensaver
 
+Requirements
+============
+
+In order of using this rc.lua you need to install the following packages:
+
+
 Screenshot
 ==========
 
