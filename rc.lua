@@ -468,7 +468,6 @@ os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 ---os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 
---- Al parecer los demonios corren mejor así con estas lineas.
 --
 awful.util.spawn_with_shell("gnome-session")
 awful.util.spawn_with_shell("gnome-keyring-daemon")
