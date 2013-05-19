@@ -149,7 +149,7 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
--- Weather widget (Muammar)
+-- "Weather widget"
 weatherwidget = widget({ type = "textbox" })
 weather_t = awful.tooltip({ objects = { weatherwidget },})
 
@@ -161,7 +161,7 @@ vicious.register(weatherwidget, vicious.widgets.weather,
                 --'1800': check every 30 minutes.
                 -- Maracaibo: SVMC
                 -- Toulouse: LFBO
- -- CPU WIDGET (Muammar)
+ -- "CPU WIDGET"
 
 cpuwidget = widget({
     type = 'textbox',
@@ -169,7 +169,7 @@ cpuwidget = widget({
 })
 wicked.register(cpuwidget, wicked.widgets.cpu,
     ' <span color="white">CPU:</span> $1%')
- -- CPU GRAPH (Muammar)
+ -- "CPU GRAPH"
 
 cpugraphwidget = widget({
     type = 'graph',
@@ -192,7 +192,7 @@ cpugraphwidget:plot_properties_set('cpu', {
 
 wicked.register(cpugraphwidget, wicked.widgets.cpu, '$1', 1, 'cpu')
 
- -- WiFi rates (Muammar)
+ -- "WiFi rates"
 
 netwifiwidget = widget({
     type = 'textbox',
@@ -203,7 +203,7 @@ wicked.register(netwifiwidget, wicked.widgets.net,
     ' <span color="white">WiFi</span>: ${wlan0 down} / ${wlan0 up} [ ${wlan0 rx} //  ${wlan0 tx} ] ',
 nil, nil, 3)
 
--- Ethernet rates (Muammar)
+-- "Ethernet rates"
 
 netethwidget = widget({
     type = 'textbox',
@@ -214,7 +214,7 @@ wicked.register(netethwidget, wicked.widgets.net,
     ' <span color="white">Eth0</span>: ${eth0 down} / ${eth0 up} [ ${eth0 rx} //  ${eth0 tx} ] ',
 nil, nil, 3)
 
--- MPD now playing (Muammar)
+-- "MPD now playing"
  mpdwidget = widget({
                type = 'textbox',
                name = 'mpdwidget'
@@ -462,6 +462,9 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- This section contains all programs that are going to be started when logged
+-- in.
+--
 os.execute("gnome-sound-applet &")
 os.execute("gnome-terminal &")
 ---os.execute("nm-applet &")

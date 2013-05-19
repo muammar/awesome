@@ -15,8 +15,8 @@ The services launched when logging in are:
 Requirements
 ============
 
-In order of using this rc.lua you need to install the following packages:
-
+In order of using this rc.lua you need to have installed the packages listed in
+the "services launched when logging in" shown above.
 
 Screenshot
 ==========
