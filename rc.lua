@@ -215,13 +215,13 @@ wicked.register(netethwidget, wicked.widgets.net,
 nil, nil, 3)
 
 -- "MPD now playing"
- mpdwidget = widget({
-               type = 'textbox',
-               name = 'mpdwidget'
-           })
-
-           wicked.register(mpdwidget, wicked.widgets.mpd,
-               ' <span color="white">Now Playing:</span> $1')
+----- mpdwidget = widget({
+-----               type = 'textbox',
+-----               name = 'mpdwidget'
+-----           })
+-----
+-----           wicked.register(mpdwidget, wicked.widgets.mpd,
+-----               ' <span color="white">Now Playing:</span> $1')
 
 --- musicwidget = awesompd:create() -- Create awesompd widget
 --- musicwidget.font = "Liberation Mono" -- Set widget font
