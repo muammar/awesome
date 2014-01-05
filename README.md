@@ -12,6 +12,8 @@ The services launched when logging in are:
     - gnome-keyring-daemon
     - gnome-screensaver
 
+*Note*: This does not work with Gnome > 3.8.
+
 Requirements
 ============
 

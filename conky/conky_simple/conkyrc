@@ -1,0 +1,90 @@
+background no
+font Sans:size=8
+#xftfont Sans:size=10
+use_xft yes
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 220 5
+maximum_width 220
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 12
+gap_y 35
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+uppercase yes # set to yes if you want all text to be in uppercase
+
+TEXT
+${color white}SYSTEM ${hr 1}${color}
+
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Uptime: $alignr$uptime
+Temp: ${alignr}${exec sensors | grep "Core 0" | awk '{print $3}'}
+Fan: ${alignr}${exec sensors |grep Exhaust |awk '{print $3, $4}'}
+CPU: ${alignr}${freq} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+
+#CPU total ${alignr}${cpu cpu0}%
+#${cpubar 3 cpu0}
+## Esto es por si quieres cada CPU
+CPU1 ${alignr}${cpu cpu1}%
+${cpubar 3 cpu1}
+CPU2 ${alignr}${cpu cpu2}%
+${cpubar 3 cpu2}
+CPU3 ${alignr}${cpu cpu3}%
+${cpubar 3 cpu3}
+CPU4 ${alignr}${cpu cpu4}%
+${cpubar 3 cpu4}
+
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 3}
+swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 3}
+
+Highest CPU $alignr CPU% MEM%
+${top name 1}$alignr${top cpu 1}${top mem 1}
+${top name 2}$alignr${top cpu 2}${top mem 2}
+${top name 3}$alignr${top cpu 3}${top mem 3}
+
+Highest MEM $alignr CPU% MEM%
+${top_mem name 1}$alignr${top_mem cpu 1}${top_mem mem 1}
+${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
+${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
+
+${color white}Filesystem ${hr 1}${color}
+
+Root: ${alignr}${fs_free /} / ${fs_size /}
+${fs_bar 2 /}
+Home: ${alignr}${fs_free /home} / ${fs_size /home}
+${fs_bar 2 /home}
+DEVEL: ${alignr}${fs_free /home/muammar/devel/} / ${fs_size /home/muammar/devel/}
+${fs_bar 2 /home/muammar/devel/}
+
+${color white}WIRED CONNECTION${hr 1}${color}
+Down ${downspeed eth0} k/s ${alignr}Up ${upspeed eth0} k/s
+${downspeedgraph eth0 25,107} ${alignr}${upspeedgraph eth0 25,107}
+Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+
+${color white}WIFI CONNECTION ${hr 1}${color}
+Down ${downspeed wlan0} k/s ${alignr}Up ${upspeed wlan0} k/s
+${downspeedgraph wlan0 25,107} ${alignr}${upspeedgraph wlan0 25,107}
+Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+#${color white}WEATHER ${hr 1}${color}
+#
+#${execi 1800 /home/muammar/.conky/conky_simple/weather.sh SWXX0006}
