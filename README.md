@@ -26,4 +26,4 @@ the "services launched when logging in" shown above.
 Screenshot
 ==========
 
-![Alt text](screenshots/Awesome_lua.png?raw=true)
+![Alt text](screenshots/Screenshot.png?raw=true)
