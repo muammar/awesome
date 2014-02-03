@@ -465,17 +465,19 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- This section contains all programs that are going to be started when logged
 -- in.
 --
-os.execute("gnome-sound-applet &")
+--os.execute("gnome-sound-applet &")
 os.execute("gnome-terminal &")
 ---os.execute("nm-applet &")
-os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
----os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
-
+---os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
+os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 --
-awful.util.spawn_with_shell("gnome-session")
-awful.util.spawn_with_shell("gnome-keyring-daemon")
-awful.util.spawn_with_shell("gnome-screensaver")
+--awful.util.spawn_with_shell("gnome-session")
+--awful.util.spawn_with_shell("gnome-keyring-daemon")
+--awful.util.spawn_with_shell("gnome-screensaver")
+awful.util.spawn_with_shell("xfce4-power-manager")
+awful.util.spawn_with_shell("volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
 awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
----awful.util.spawn_with_shell("dropbox start")
+awful.util.spawn_with_shell("dropbox start")
+awful.util.spawn_with_shell("~/bin/xmodmapawesome")
 ---awful.util.spawn_with_shell("gnome-settings-daemon")
