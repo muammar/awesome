@@ -467,8 +467,8 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 --
 --os.execute("gnome-sound-applet &")
 os.execute("gnome-terminal &")
----os.execute("nm-applet &")
----os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
+os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
+os.execute("nm-applet &")
 os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 --
 --awful.util.spawn_with_shell("gnome-session")
