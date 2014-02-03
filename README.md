@@ -6,13 +6,16 @@ configuration in my Macbook Pro 13" running Debian unstable.
 
 The services launched when logging in are:
 
-    - gnome-sound-applet
-    - gnome-terminal
-    - gnome-session
-    - gnome-keyring-daemon
-    - gnome-screensaver
+    - xfce4-power-manager.
+    - gnome-terminal (not mandatory).
+    - volumeicon.
+    - nm-applet (not mandatory).
+    - polkit-gnome-authentication-agent-1 (mandatory if using nm-applet).
+    - conky (not mandatory).
 
-*Note*: This does not work with Gnome > 3.8.
+*Note*: This does not need Gnome-shellanymore. As a personal preference, I like
+gnome-terminal, and nm-applet. Those are the only required components
+(polkit-gnome-authentication-agent-1 if nm-applet is used).
 
 Requirements
 ============
