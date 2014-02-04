@@ -9,6 +9,8 @@ The services launched when logging in are:
     - xfce4-power-manager.
     - volumeicon.
     - polkit-gnome-authentication-agent-1 (mandatory if using nm-applet).
+    - gnome-settings-daemon (mandatory if using gnome-terminal). If you are not
+      using gnome-termina, please comment gnome-settings-daemon in rc.lua file.
     - gnome-terminal (not mandatory).
     - nm-applet (not mandatory).
     - conky (not mandatory).
@@ -16,10 +18,13 @@ The services launched when logging in are:
 This does not need Gnome-shell anymore. As a personal preference, I like
 gnome-terminal, and nm-applet and that's why I have added them to my rc.lua.
 Thus, there are only two required components
-(polkit-gnome-authentication-agent-1 if nm-applet is used).
-`xfce4-power-manager` is capable of making work most of the hotkeys. As I have
-a macbook pro, the keyboard backlight needed other little program in order to
-work. I'll be adding them little by little.
+(polkit-gnome-authentication-agent-1 if nm-applet is used, and
+gnome-settings-daemon if using gnome-terminal).  `xfce4-power-manager` is
+capable of making work most of the hotkeys. As I have a macbook pro, the
+keyboard backlight needed other little program in order to work. I'll be adding
+them little by little. As for gnome-settings-daemon, this is for avoid loosing
+the contrast of active tabs in gnome-terminal. Apparently, there is another way
+to avoid this problem of the contrast. If I found a solution I'll update this.
 
 As for the background, I have decided for the moments set it from theme.lua,
 I hope I can set it later from my rc.lua.
