@@ -479,5 +479,5 @@ awful.util.spawn_with_shell("volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
 awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
-awful.util.spawn_with_shell("~/bin/xmodmapawesome")
 awful.util.spawn_with_shell("gnome-settings-daemon")
+awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
