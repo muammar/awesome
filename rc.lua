@@ -473,7 +473,7 @@ os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 --os.execute("nm-applet &")
 -- End GNome
-os.execute("wicd-gtk &")
+os.execute("wicd-client &")
 os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 --
 -- GNome
