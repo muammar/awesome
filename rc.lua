@@ -157,10 +157,11 @@ vicious.register(weatherwidget, vicious.widgets.weather,
                 function (widget, args)
                     weather_t:set_text("City: " .. args["{city}"] .."\nWind: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. "\nSky: " .. args["{sky}"] .. "\nHumidity: " .. args["{humid}"] .. "%")
                     return args["{city}"] .. ": " .. args["{tempc}"] .. "⁰C  "
-                end, 300, "LFBO")
+                end, 300, "OLBA")
                 --'1800': check every 30 minutes.
                 -- Maracaibo: SVMC
                 -- Toulouse: LFBO
+                -- Beirut: OLBA
  -- "CPU WIDGET"
 
 cpuwidget = widget({
@@ -465,19 +466,25 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- This section contains all programs that are going to be started when logged
 -- in.
 --
---os.execute("gnome-sound-applet &")
+
+-- GNome
+--os.execute("gnome-sound-applet &") --- deprecated
 os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
-os.execute("nm-applet &")
+--os.execute("nm-applet &")
+-- End GNome
+os.execute("wicd-gtk &")
 os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 --
+-- GNome
 --awful.util.spawn_with_shell("gnome-session")
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
 --awful.util.spawn_with_shell("gnome-screensaver")
+awful.util.spawn_with_shell("gnome-settings-daemon")
+-- End GNome
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
 awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
-awful.util.spawn_with_shell("gnome-settings-daemon")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")

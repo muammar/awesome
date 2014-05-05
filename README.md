@@ -14,11 +14,16 @@ The services launched when logging in are:
     - gnome-terminal (not mandatory).
     - nm-applet (not mandatory).
     - conky (not mandatory).
+    - Wicd as an alternative to nm-applet (optional).
 
 This does not need Gnome-shell nor Pulseaudio anymore. As a personal
 preference, I like gnome-terminal, and nm-applet and that's why I have added
 them to my rc.lua.  Thus, there are only two required components being
 xfce4-power-manager and volumeicon.
+
+*Note*: Last updates in Gnome don't let you use network-manager (0.9.8.10) even
+if gnome-settings-daemon is running (at least right know, I haven't researched
+more about the issue).
 
 If using gnome-terminal and nm-applet then
 `polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
