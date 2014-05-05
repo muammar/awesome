@@ -473,7 +473,6 @@ os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 --os.execute("nm-applet &")
 -- End GNome
-os.execute("wicd-client &")
 os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 --
 -- GNome
@@ -482,6 +481,7 @@ os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shif
 --awful.util.spawn_with_shell("gnome-screensaver")
 awful.util.spawn_with_shell("gnome-settings-daemon")
 -- End GNome
+awful.util.spawn("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
