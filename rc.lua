@@ -157,7 +157,7 @@ vicious.register(weatherwidget, vicious.widgets.weather,
                 function (widget, args)
                     weather_t:set_text("City: " .. args["{city}"] .."\nWind: " .. args["{windkmh}"] .. "km/h " .. args["{wind}"] .. "\nSky: " .. args["{sky}"] .. "\nHumidity: " .. args["{humid}"] .. "%")
                     return args["{city}"] .. ": " .. args["{tempc}"] .. "⁰C  "
-                end, 300, "OLBA")
+                end, 300, "LFBO")
                 --'1800': check every 30 minutes.
                 -- Maracaibo: SVMC
                 -- Toulouse: LFBO
@@ -322,6 +322,11 @@ globalkeys = awful.util.table.join(
             end
         end),
 
+              awful.key({ }, "XF86KbdBrightnessDown", function ()
+                      awful.util.spawn("/home/muammar/bin/kbdlight down") end),
+              awful.key({ }, "XF86KbdBrightnessUp", function ()
+                      awful.util.spawn("/home/muammar/bin/kbdlight up") end),
+
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
@@ -480,8 +485,9 @@ os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shif
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
 --awful.util.spawn_with_shell("gnome-screensaver")
 awful.util.spawn_with_shell("gnome-settings-daemon")
+
 -- End GNome
-awful.util.spawn("wicd-client -t")
+awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
