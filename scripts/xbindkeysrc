@@ -8,23 +8,23 @@
 # The pound(#) symbol may be used anywhere for comments.
 #
 # A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h 
-# The XK_ is not needed. 
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
 #
-# List of modifier (on my keyboard): 
-#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+# List of modifier (on my keyboard):
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
 #
-# Another way to specifie a key is to use 'xev' and set the 
-# keycode with c:nnn or the modifier with m:nnn where nnn is 
-# the keycode or the state returned by xev 
+# Another way to specifie a key is to use 'xev' and set the
+# keycode with c:nnn or the modifier with m:nnn where nnn is
+# the keycode or the state returned by xev
 #
-# This file is created by xbindkey_config 
-# The structure is : 
-# # Remark 
-# "command" 
-# m:xxx + c:xxx 
-# Shift+... 
+# This file is created by xbindkey_config
+# The structure is :
+# # Remark
+# "command"
+# m:xxx + c:xxx
+# Shift+...
 
 
 
@@ -66,17 +66,17 @@
 # Stop
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.clementine /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
     XF86AudioStop
-    # For the benefit of emacs users: -*- shell-script -*- 
+    # For the benefit of emacs users: -*- shell-script -*-
 
-#Brightness up
-"kbdlight up"
-    m:0x0 + c:238
-    XF86KbdBrightnessUp 
-
-#Brightness down
-"kbdlight down"
-    m:0x0 + c:237
-    XF86KbdBrightnessDown 
-
+#####Brightness up
+####"kbdlight up"
+####    m:0x0 + c:238
+####    XF86KbdBrightnessUp
+####
+#####Brightness down
+####"kbdlight down"
+####    m:0x0 + c:237
+####    XF86KbdBrightnessDown
+####
 #
 # End of xbindkeys configuration
