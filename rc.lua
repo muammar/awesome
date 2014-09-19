@@ -489,7 +489,7 @@ awful.util.spawn_with_shell("gnome-settings-daemon")
 -- End GNome
 awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
-awful.util.spawn_with_shell("sleep 5 && volumeicon") -- Volume icon
+awful.util.spawn_with_shell("sleep 5; volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
 awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
