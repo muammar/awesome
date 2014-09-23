@@ -21,7 +21,7 @@ default_shade_color black
 default_outline_color green
 alignment top_right
 gap_x 12
-gap_y 35
+gap_y 24
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -39,10 +39,8 @@ Fan: ${alignr}${exec sensors |grep Exhaust |awk '{print $3, $4}'}
 CPU: ${alignr}${freq} MHz
 Processes: ${alignr}$processes ($running_processes running)
 Load: ${alignr}$loadavg
+Battery: ${battery_percent BAT0}% ${battery_bar BAT0}
 
-#CPU total ${alignr}${cpu cpu0}%
-#${cpubar 3 cpu0}
-## Esto es por si quieres cada CPU
 CPU1 ${alignr}${cpu cpu1}%
 ${cpubar 3 cpu1}
 CPU2 ${alignr}${cpu cpu2}%
@@ -68,7 +66,6 @@ ${top_mem name 2}$alignr${top_mem cpu 2}${top_mem mem 2}
 ${top_mem name 3}$alignr${top_mem cpu 3}${top_mem mem 3}
 
 ${color white}Filesystem ${hr 1}${color}
-
 Root: ${alignr}${fs_free /} / ${fs_size /}
 ${fs_bar 2 /}
 Home: ${alignr}${fs_free /home} / ${fs_size /home}
