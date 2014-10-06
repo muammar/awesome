@@ -8,12 +8,15 @@ The services launched when logging in are:
 
     - xfce4-power-manager.
     - volumeicon.
+    - xscreensaver.
     - polkit-gnome-authentication-agent-1 (mandatory if using nm-applet).
     - gnome-settings-daemon (mandatory if using gnome-terminal). If you are not
       using gnome-terminal, please comment gnome-settings-daemon in rc.lua file.
     - gnome-terminal (not mandatory).
     - nm-applet (not mandatory).
     - conky (not mandatory).
+    - dispad (not mandatory).
+    - dropbox (not mandatory).
     - Wicd as an alternative to nm-applet (optional).
 
 This does not need Gnome-shell nor Pulseaudio anymore. As a personal

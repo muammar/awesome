@@ -340,6 +340,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    -- Screensaver
+    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
@@ -485,8 +488,8 @@ os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shif
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
 --awful.util.spawn_with_shell("gnome-screensaver")
 awful.util.spawn_with_shell("gnome-settings-daemon")
-
 -- End GNome
+--
 awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("sleep 20; volumeicon") -- Volume icon
@@ -494,4 +497,5 @@ awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
 awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
+awful.util.spawn_with_shell("xscreensaver -no-splash")
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
