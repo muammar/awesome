@@ -223,7 +223,9 @@ for s = 1, screen.count() do
     wifiwidget = wibox.widget.textbox()
     vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}% | </span> ', 2, "wlan0")
 
-
+    --Weather Widget
+    weather = wibox.widget.textbox()
+    vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
 -- Initialize widget
@@ -243,6 +245,7 @@ netwidget = wibox.widget.textbox()
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(weather)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -529,4 +532,5 @@ awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/archive_miscellaneous_domo-kun_and_lizard_026020_.jpg") --Set wallpaper
+awful.util.spawn_with_shell("wmname LG3D") -- java fix
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
