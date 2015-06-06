@@ -196,14 +196,48 @@ for s = 1, screen.count() do
     left_layout:add(mypromptbox[s])
 
     ---wibox2
--- Initialize widget
-memwidget = wibox.widget.textbox()
--- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "Memory: $1% ($2MB/$3MB)", 13)
+    -- Memory
+    -- Initialize widget
+    memwidget = wibox.widget.textbox()
+    -- Register widget
+    vicious.register(memwidget, vicious.widgets.mem, "Memory: $1% ($2MB/$3MB) ", 13)
+
+    -- Initialize widget
+    cpuwidget = awful.widget.graph()
+    -- Graph properties
+    cpuwidget:set_width(50)
+    cpuwidget:set_background_color("#494B4F")
+    cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"},
+                    {1, "#AECF96" }}})
+    -- Register widget
+    vicious.register(cpuwidget, vicious.widgets.cpu, " $1")
+
+    -- Initialize widget
+    cpuwidget2 = wibox.widget.textbox()
+    -- Register widget
+    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%")
+
+    -- wifi widget
+    wifiwidget = wibox.widget.textbox()
+    vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}%</span> ', 2, "wlan0")
+
+-- network widget Eth0
+    netwidget = wibox.widget.textbox()
+    vicious.register(netwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
+    --
+-- network widget Wlan0
+    netwidget2 = wibox.widget.textbox()
+    vicious.register(netwidget2, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
+
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
     local bottom_layout = wibox.layout.fixed.horizontal()
+    bottom_layout:add(netwidget)
+    bottom_layout:add(netwidget2)
+    bottom_layout:add(wifiwidget)
     bottom_layout:add(memwidget)
+    bottom_layout:add(cpuwidget)
+    bottom_layout:add(cpuwidget2)
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
