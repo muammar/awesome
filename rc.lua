@@ -117,6 +117,8 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+-- Create a systray
+ mysystray = wibox.widget.systray()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -219,21 +221,20 @@ for s = 1, screen.count() do
 
     -- wifi widget
     wifiwidget = wibox.widget.textbox()
-    vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}%</span> ', 2, "wlan0")
+    vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}% | </span> ', 2, "wlan0")
 
--- network widget Eth0
-    netwidget = wibox.widget.textbox()
-    vicious.register(netwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
+
+-- network widget
+
+-- Initialize widget
+netwidget = wibox.widget.textbox()
+-- Register widget
+    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
     --
--- network widget Wlan0
-    netwidget2 = wibox.widget.textbox()
-    vicious.register(netwidget2, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
-
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
     local bottom_layout = wibox.layout.fixed.horizontal()
     bottom_layout:add(netwidget)
-    bottom_layout:add(netwidget2)
     bottom_layout:add(wifiwidget)
     bottom_layout:add(memwidget)
     bottom_layout:add(cpuwidget)
@@ -499,3 +500,33 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- This section contains all programs that are going to be started when logged
+-- in.
+--
+
+-- GNome
+--os.execute("gnome-sound-applet &") --- deprecated
+os.execute("gnome-terminal &")
+os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
+--os.execute("nm-applet &")
+-- End GNome
+os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
+--
+-- GNome
+--awful.util.spawn_with_shell("gnome-session")
+--awful.util.spawn_with_shell("gnome-keyring-daemon")
+--awful.util.spawn_with_shell("gnome-screensaver")
+awful.util.spawn_with_shell("gnome-settings-daemon")
+-- End GNome
+--
+awful.util.spawn_with_shell("wicd-client -t")
+awful.util.spawn_with_shell("xfce4-power-manager")
+awful.util.spawn_with_shell("sleep 20; volumeicon") -- Volume icon
+awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
+awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
+awful.util.spawn_with_shell("dropbox start")
+awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
+awful.util.spawn_with_shell("xscreensaver -no-splash")
+awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/archive_miscellaneous_domo-kun_and_lizard_026020_.jpg") --Set wallpaper
+--awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
