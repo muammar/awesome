@@ -237,7 +237,7 @@ ethwidget = wibox.widget.textbox()
 -- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
+    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 3)
     --
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
@@ -321,6 +321,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    -- Screensaver
+    awful.key({ modkey, "Control" }, "s", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
