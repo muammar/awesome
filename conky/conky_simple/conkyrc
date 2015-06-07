@@ -1,4 +1,4 @@
-background no
+background yes
 font Sans:size=8
 #xftfont Sans:size=10
 use_xft yes
@@ -6,7 +6,7 @@ xftalpha 0.9
 update_interval 3.0
 total_run_times 0
 own_window yes
-own_window_type desktop
+own_window_type override
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
