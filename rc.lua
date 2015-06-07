@@ -232,12 +232,17 @@ for s = 1, screen.count() do
 -- Initialize widget Ethernet
 ethwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 2)
+    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 2)
 
 -- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
 -- Register widget
     vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 3)
+
+    -- Initialize widget
+datewidget = wibox.widget.textbox()
+-- Register widget
+vicious.register(datewidget, vicious.widgets.date, " %b %d, %R:%S", 1)
     --
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
@@ -253,7 +258,7 @@ netwidget = wibox.widget.textbox()
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(weather)
-    right_layout:add(mytextclock)
+    right_layout:add(datewidget)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -541,5 +546,4 @@ awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/archive_miscellaneous_domo-kun_and_lizard_026020_.jpg") --Set wallpaper
-awful.util.spawn_with_shell("wmname LG3D") -- java fix
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
