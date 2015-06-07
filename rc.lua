@@ -225,7 +225,8 @@ for s = 1, screen.count() do
 
     --Weather Widget
     weather = wibox.widget.textbox()
-    vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
+    vicious.register(weather, vicious.widgets.weather, "Weather: ${city}. Temp: ${tempc}⁰C Humid: ${humid}%.", 1200, "LFBO")
+    ---vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
 -- Initialize widget
