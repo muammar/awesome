@@ -229,7 +229,12 @@ for s = 1, screen.count() do
     ---vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
--- Initialize widget
+-- Initialize widget Ethernet
+ethwidget = wibox.widget.textbox()
+-- Register widget
+    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 2)
+
+-- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
 -- Register widget
     vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> | </span>', 3)
@@ -237,6 +242,7 @@ netwidget = wibox.widget.textbox()
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
     local bottom_layout = wibox.layout.fixed.horizontal()
+    bottom_layout:add(ethwidget)
     bottom_layout:add(netwidget)
     bottom_layout:add(wifiwidget)
     bottom_layout:add(memwidget)
