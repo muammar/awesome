@@ -242,7 +242,7 @@ netwidget = wibox.widget.textbox()
     -- Initialize widget
 datewidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(datewidget, vicious.widgets.date, " %b %d, %R:%S", 1)
+vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
     --
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
