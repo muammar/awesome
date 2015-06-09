@@ -239,10 +239,14 @@ netwidget = wibox.widget.textbox()
 -- Register widget
     vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 3)
 
-    -- Initialize widget
+-- Initialize widget date
 datewidget = wibox.widget.textbox()
 -- Register widget
 vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
+
+-- Initialize widget battery
+batwidget = wibox.widget.textbox()
+vicious.register(batwidget, vicious.widgets.bat, ' Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ]', 60, "BAT0")
     --
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
@@ -253,6 +257,7 @@ vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
     bottom_layout:add(memwidget)
     bottom_layout:add(cpuwidget)
     bottom_layout:add(cpuwidget2)
+    bottom_layout:add(batwidget)
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
