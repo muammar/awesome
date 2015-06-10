@@ -198,11 +198,24 @@ for s = 1, screen.count() do
     left_layout:add(mypromptbox[s])
 
     ---wibox2
+    --
     -- Memory
     -- Initialize widget
     memwidget = wibox.widget.textbox()
     -- Register widget
-    vicious.register(memwidget, vicious.widgets.mem, "Memory: $1% ($2MB/$3MB) ", 13)
+    vicious.register(memwidget, vicious.widgets.mem, "Memory: $1% ($2MB/$3MB) ", 11)
+
+    -- Initialize widget
+memwidget2 = awful.widget.progressbar()
+-- Progressbar properties
+memwidget2:set_width(50)
+memwidget2:set_vertical(true)
+memwidget2:set_background_color("#494B4F")
+memwidget2:set_border_color(nil)
+memwidget2:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#AECF96"}, {0.5, "#88A175"},
+                    {1, "#FF5656"}}})
+-- Register widget
+vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 
     -- Initialize widget
     cpuwidget = awful.widget.graph()
@@ -217,7 +230,7 @@ for s = 1, screen.count() do
     -- Initialize widget
     cpuwidget2 = wibox.widget.textbox()
     -- Register widget
-    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%")
+    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 2)
 
     -- wifi widget
     wifiwidget = wibox.widget.textbox()
@@ -246,7 +259,7 @@ vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
 
 -- Initialize widget battery
 batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, ' Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ] ', 60, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ] ', 60, "BAT0")
     --
     mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
     -- Widgets that are aligned to the left
@@ -255,6 +268,7 @@ vicious.register(batwidget, vicious.widgets.bat, ' Bat:<span color="#CC9933"> $2
     bottom_layout:add(netwidget)
     bottom_layout:add(wifiwidget)
     bottom_layout:add(memwidget)
+    bottom_layout:add(memwidget2)
     bottom_layout:add(batwidget)
     bottom_layout:add(cpuwidget)
     bottom_layout:add(cpuwidget2)
