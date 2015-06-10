@@ -232,12 +232,12 @@ for s = 1, screen.count() do
 -- Initialize widget Ethernet
 ethwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 2)
+    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 1)
 
 -- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 3)
+    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 2)
 
 -- Initialize widget date
 datewidget = wibox.widget.textbox()
