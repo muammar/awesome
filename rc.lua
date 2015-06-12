@@ -245,7 +245,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 -- Initialize widget Ethernet
 ethwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 1)
+    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 3)
 
 -- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
