@@ -551,6 +551,7 @@ os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 --os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 -- US keyboard
 os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_caps_toggle &")
+os.execute("xrdb -merge ~/.Xresources")
 --
 -- GNome
 --awful.util.spawn_with_shell("gnome-session")
