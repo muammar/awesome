@@ -547,7 +547,10 @@ os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 --os.execute("nm-applet &")
 -- End GNome
-os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
+-- GB Keyboard
+--os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
+-- US keyboard
+os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_caps_toggle &")
 --
 -- GNome
 --awful.util.spawn_with_shell("gnome-session")
@@ -564,5 +567,5 @@ awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/archive_miscellaneous_domo-kun_and_lizard_026020_.jpg") --Set wallpaper
+awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/bobs-burgers.jpg") --Set wallpaper
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
