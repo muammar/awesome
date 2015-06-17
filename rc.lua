@@ -332,6 +332,8 @@ globalkeys = awful.util.table.join(
             end
         end),
 
+---    awful.key({ }, "XF86KbdBrightnessDown", function () awful.util.spawn("/home/muammar/bin/kbdlight down") end),
+---    awful.key({ }, "XF86KbdBrightnessUp", function () awful.util.spawn("/home/muammar/bin/kbdlight up") end),
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
