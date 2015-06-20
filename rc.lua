@@ -553,7 +553,7 @@ os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
 --os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 -- US keyboard
 os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_caps_toggle &")
-os.execute("xrdb -merge ~/.Xresources")
+---os.execute("xrdb -merge ~/.Xresources")
 --
 -- GNome
 --awful.util.spawn_with_shell("gnome-session")
@@ -562,6 +562,7 @@ os.execute("xrdb -merge ~/.Xresources")
 awful.util.spawn_with_shell("gnome-settings-daemon")
 -- End GNome
 --
+--awful.util.spawn_with_shell("sh ~/.config/awesome/scripts/monitorretina")
 awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("sleep 20; volumeicon") -- Volume icon
