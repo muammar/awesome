@@ -189,7 +189,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = "34", screen = s })
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -234,7 +234,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 
     -- wifi widget
     wifiwidget = wibox.widget.textbox()
-    vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}% | </span> ', 2, "wlan0")
+    vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}% | </span> ', 2, "wlp3s0")
 
     --Weather Widget
     weather = wibox.widget.textbox()
@@ -250,7 +250,7 @@ ethwidget = wibox.widget.textbox()
 -- Initialize widget Wifi
 netwidget = wibox.widget.textbox()
 -- Register widget
-    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlan0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlan0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlan0 rx_gb} GB //  ${wlan0 tx_gb} GB ] </span>', 2)
+    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlp3s0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlp3s0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlp3s0 rx_gb} GB //  ${wlp3s0 tx_gb} GB ] </span>', 2)
 
 -- Initialize widget date
 datewidget = wibox.widget.textbox()
@@ -261,7 +261,7 @@ vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
 batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ] ', 60, "BAT0")
     --
-    mywibox2[s] = awful.wibox({ position = "bottom", screen = s })
+    mywibox2[s] = awful.wibox({ position = "bottom", height = "34", screen = s })
     -- Widgets that are aligned to the left
     local bottom_layout = wibox.layout.fixed.horizontal()
     bottom_layout:add(ethwidget)
