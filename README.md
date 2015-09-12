@@ -49,6 +49,21 @@ the "services launched when logging in" shown above.
 
 I'll put more instructions later.
 
+## HiDPI screens
+
+There is a way to make this work for the macbook pro 13" retina 2015. Two changes are needed:
+
+1. One has to change the `height` of the wibox in `rc.lua`:
+
+Example:
+
+```
+mywibox[s] = awful.wibox({ position = "top", height = "34", screen = s })
+```
+
+2. Change the `theme.font` size in
+   `/usr/share/awesome/themes/<yourtheme>/theme.lua` to `16`.
+
 Screenshot
 ==========
 
