@@ -1,5 +1,5 @@
 background yes
-font Sans:size=8
+font Sans:size=9
 #xftfont Sans:size=10
 use_xft yes
 xftalpha 0.9
@@ -11,7 +11,7 @@ own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 220 5
-maximum_width 220
+maximum_width 440
 draw_shades yes
 draw_outline no
 draw_borders no
