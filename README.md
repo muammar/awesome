@@ -51,7 +51,8 @@ I'll put more instructions later.
 
 ## HiDPI screens
 
-There is a way to make this work for the macbook pro 13" retina 2015. Two changes are needed:
+There is a way to make this work for the macbook pro 13" retina 2015. Two
+changes are needed:
 
 1. One has to change the `height` of the wibox in `rc.lua`:
 

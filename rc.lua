@@ -571,5 +571,5 @@ awful.util.spawn_with_shell("conky -c ~/.conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/bin/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/bobs-burgers.jpg") --Set wallpaper
+awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/ws_Debian_Red_Logo_1920x1080.jpg") --Set wallpaper
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
