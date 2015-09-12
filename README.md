@@ -65,6 +65,8 @@ mywibox[s] = awful.wibox({ position = "top", height = "34", screen = s })
 2. Change the `theme.font` size in
    `/usr/share/awesome/themes/<yourtheme>/theme.lua` to `16`.
 
+**Note**: these settings shouldn't play well with external monitors.
+
 Screenshot
 ==========
 
