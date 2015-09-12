@@ -203,7 +203,7 @@ for s = 1, screen.count() do
     -- Initialize widget
     memwidget = wibox.widget.textbox()
     -- Register widget
-    vicious.register(memwidget, vicious.widgets.mem, "Memory: $1% ($2MB/$3MB) ", 11)
+    vicious.register(memwidget, vicious.widgets.mem, "RAM: $1% ($2MB/$3MB) ", 11)
 
     -- Initialize widget
 memwidget2 = awful.widget.progressbar()
