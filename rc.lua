@@ -567,7 +567,7 @@ awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
 awful.util.spawn_with_shell("sleep 20; volumeicon") -- Volume icon
 awful.util.spawn_with_shell("rm ~/.dispad.pid; dispad -F")
-awful.util.spawn_with_shell("conky -c /home/$USER/.config/awesome/conky/conky_simple/conkyrc")
+awful.util.spawn_with_shell("sleep 5; conky -c /home/$USER/.config/awesome/conky/conky_simple/conkyrc")
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
