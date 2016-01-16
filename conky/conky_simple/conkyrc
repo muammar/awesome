@@ -35,7 +35,7 @@ Hostname: $alignr$nodename
 Kernel: $alignr$kernel
 Uptime: $alignr$uptime
 Temp: ${alignr}${exec sensors | grep "Core 0" | awk '{print $3}'}
-Fan: ${alignr}${exec sensors |grep Exhaust |awk '{print $3, $4}'}
+Fan: ${alignr}${exec sensors |grep Right |awk '{print $4, $5}'}
 CPU: ${alignr}${freq} MHz
 Processes: ${alignr}$processes ($running_processes running)
 Load: ${alignr}$loadavg
