@@ -573,4 +573,8 @@ awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome"
 awful.util.spawn_with_shell("xbindkeys -f /home/$USER/.config/awesome/scripts/xbindkeysrc")
 --awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/ws_Debian_Red_Logo_1920x1080.jpg") --Set wallpaper
+-- HiDPI specific
+--
+awful.util.spawn_with_shell("xrandr --dpi 196")
+awful.util.spawn_with_shell("xrdb -merge /home/muammar/.config/awesome/scripts/Xdefaults.hidpi")
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
