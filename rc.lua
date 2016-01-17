@@ -576,5 +576,5 @@ awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/ws_Debian_Red_Logo_1920
 -- HiDPI specific
 --
 awful.util.spawn_with_shell("xrandr --dpi 196")
-awful.util.spawn_with_shell("xrdb -merge /home/muammar/.config/awesome/scripts/Xdefaults.hidpi")
+awful.util.spawn_with_shell("xrdb -merge /home/$USER/.config/awesome/scripts/Xdefaults.hidpi")
 --awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
