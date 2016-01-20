@@ -79,9 +79,9 @@ ${downspeedgraph eth0 25,107} ${alignr}${upspeedgraph eth0 25,107}
 Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
 
 ${color white}WIFI CONNECTION ${hr 1}${color}
-Down ${downspeed wlan0} k/s ${alignr}Up ${upspeed wlan0} k/s
-${downspeedgraph wlan0 25,107} ${alignr}${upspeedgraph wlan0 25,107}
-Total ${totaldown wlan0} ${alignr}Total ${totalup wlan0}
+Down ${downspeed wlp3s0} k/s ${alignr}Up ${upspeed wlp3s0} k/s
+${downspeedgraph wlp3s0 25,107} ${alignr}${upspeedgraph wlp3s0 25,107}
+Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
 #${color white}WEATHER ${hr 1}${color}
 #
 #${execi 1800 /home/muammar/.conky/conky_simple/weather.sh SWXX0006}
