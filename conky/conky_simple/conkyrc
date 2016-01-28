@@ -1,5 +1,5 @@
 background yes
-font Sans:size=9
+font Sans:size=8.9
 #xftfont Sans:size=10
 use_xft yes
 xftalpha 0.9
@@ -21,7 +21,7 @@ default_shade_color black
 default_outline_color green
 alignment top_right
 gap_x 12
-gap_y 62
+gap_y 45
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
