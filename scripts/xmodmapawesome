@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sleep 15
+sleep 10
 xbindkeys -f ~/.config/awesome/scripts/xbindkeysrc
 sleep 5
 xmodmap ~/.config/awesome/scripts/xmodmap.MacBookPro12_1
