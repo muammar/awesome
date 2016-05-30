@@ -246,3 +246,4 @@ keycode 252 =
 keycode 253 =
 keycode 254 =
 keycode 255 =
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
