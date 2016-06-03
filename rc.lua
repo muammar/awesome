@@ -571,7 +571,7 @@ awful.util.spawn_with_shell("sleep 5; conky -c /home/$USER/.config/awesome/conky
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("feh --bg-fill ~/Photos/geek/abstract/Abstract_blocks_of_color-Mac_OS_Wallpaper_2560x1600.jpg") --Set wallpaper
+awful.util.spawn_with_shell("feh --bg-fill /usr/share/wallpapers/Next/contents/images/2560x1600.png") --Set wallpaper
 -- HiDPI specific
 --
 awful.util.spawn_with_shell("xrandr --dpi 196")
