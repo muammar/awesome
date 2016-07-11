@@ -238,7 +238,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 
     --Weather Widget
     weather = wibox.widget.textbox()
-    vicious.register(weather, vicious.widgets.weather, "Weather: ${city}. Temp: ${tempc}⁰C Humid: ${humid}%.", 1200, "LFBO")
+    vicious.register(weather, vicious.widgets.weather, " Weather: ${city}. Temp: ${tempc}⁰C Humid: ${humid}%.", 1200, "LFBO")
     ---vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
@@ -557,9 +557,9 @@ os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_ca
 --
 -- GNome
 --awful.util.spawn_with_shell("gnome-session")
---awful.util.spawn_with_shell("gnome-keyring-daemon")
 --awful.util.spawn_with_shell("gnome-screensaver")
 awful.util.spawn_with_shell("gnome-settings-daemon")
+awful.util.spawn_with_shell("gnome-keyring-daemon")
 -- End GNome
 --
 --awful.util.spawn_with_shell("sh ~/.config/awesome/scripts/monitorretina")
