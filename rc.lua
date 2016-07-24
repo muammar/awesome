@@ -544,11 +544,11 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --
 
 -- GNome
---os.execute("gnome-sound-applet &") --- deprecated
 os.execute("gnome-terminal &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
-os.execute("nm-applet &")
+--os.execute("nm-applet &")
 -- End GNome
+
 -- GB Keyboard
 --os.execute("setxkbmap -model pc105 -layout gb -variant mac_intl -option grp:shift_caps_toggle &")
 -- US keyboard
@@ -562,6 +562,7 @@ awful.util.spawn_with_shell("gnome-settings-daemon")
 awful.util.spawn_with_shell("gnome-keyring-daemon")
 -- End GNome
 --
+
 --awful.util.spawn_with_shell("sh ~/.config/awesome/scripts/monitorretina")
 awful.util.spawn_with_shell("wicd-client -t")
 awful.util.spawn_with_shell("xfce4-power-manager")
@@ -572,8 +573,8 @@ awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("feh --bg-fill /usr/share/wallpapers/Next/contents/images/2560x1600.png") --Set wallpaper
--- HiDPI specific
+
+-- HiDPI specifics
 --
-awful.util.spawn_with_shell("xrandr --dpi 196")
+awful.util.spawn_with_shell("xrandr --dpi 192")
 awful.util.spawn_with_shell("xrdb -merge /home/$USER/.config/awesome/scripts/Xdefaults.hidpi")
---awful.util.spawn_with_shell("xmodmap /home/muammar/.xmodmap")
