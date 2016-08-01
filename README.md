@@ -55,10 +55,10 @@ git clone https://muammar@github.com/muammar/awesome.git
 
 ## HiDPI screens
 
-There is a way to make this work for the macbook pro 13" retina 2015. Two
+There is a way to make this work for the macbook pro 13" retina 2015. Three
 changes are needed:
 
-1. One has to change the `height` of the wibox in `rc.lua`:
+* One has to change the `height` of the wibox in `rc.lua`:
 
 Example:
 
@@ -66,11 +66,17 @@ Example:
 mywibox[s] = awful.wibox({ position = "top", height = "34", screen = s })
 ```
 
-2. Change the `theme.font` size in
+* Change the `theme.font` size in
    `/usr/share/awesome/themes/<yourtheme>/theme.lua` to `16`.
 
 **Note**: these settings shouldn't play well with external monitors, and they
     are far from being perfect.
+    
+* Change the scaling factor for Gnome applications:
+
+```
+gsettings set org.gnome.desktop.interface scaling-factor 2
+```
 
 Screenshot
 ==========
