@@ -238,7 +238,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 
     --Weather Widget
     weather = wibox.widget.textbox()
-    vicious.register(weather, vicious.widgets.weather, " Weather: ${city}. Temp: ${tempf}⁰F Humid: ${humid}%.", 1200, "LFBO")
+    vicious.register(weather, vicious.widgets.weather, " Weather: ${city} | Temp: ${tempf}⁰F (${tempc}⁰C) | Humid: ${humid}% | ", 1200, "LFBO")
     ---vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
@@ -572,7 +572,7 @@ awful.util.spawn_with_shell("sleep 5; conky -c /home/$USER/.config/awesome/conky
 awful.util.spawn_with_shell("dropbox start")
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("feh --bg-fill /usr/share/wallpapers/Next/contents/images/2560x1600.png") --Set wallpaper
+awful.util.spawn_with_shell("feh --bg-fill /home/$USER/.config/awesome/wallpaper/funnysystem.jpg") --Set wallpaper
 
 -- HiDPI specifics
 --

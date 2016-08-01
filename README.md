@@ -49,6 +49,11 @@ the "services launched when logging in" shown above.
 
 I'll put more instructions later.
 
+Install
+============
+
+To install it, you have to clone this repository in `~/.config/`
+
 ## HiDPI screens
 
 There is a way to make this work for the macbook pro 13" retina 2015. Two
