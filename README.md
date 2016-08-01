@@ -2,7 +2,7 @@ awesome
 =======
 
 This is my rc.lua file for the windows manager awesome. I use this
-configuration in my Macbook Pro 13" running Debian unstable.
+configuration in my Macbook Pro 13" (Retina) running Debian unstable.
 
 The services launched when logging in are:
 
@@ -13,33 +13,22 @@ The services launched when logging in are:
     - gnome-settings-daemon (mandatory if using gnome-terminal). If you are not
       using gnome-terminal, please comment gnome-settings-daemon in rc.lua file.
     - gnome-terminal (not mandatory).
+    - Wicd (optional).
     - nm-applet (not mandatory).
     - conky (not mandatory).
     - dispad (not mandatory).
     - dropbox (not mandatory).
-    - Wicd as an alternative to nm-applet (optional).
 
-This does not need Gnome-shell nor Pulseaudio anymore. As a personal
-preference, I like gnome-terminal, and nm-applet and that's why I have added
-them to my rc.lua.  Thus, there are only two required components being
-xfce4-power-manager and volumeicon.
-
-*Note*: Last updates in Gnome don't let you use network-manager (0.9.8.10) even
-if gnome-settings-daemon is running (at least right know, I haven't researched
-more about the issue).
+There are only two required components being xfce4-power-manager and volumeicon.
 
 If using gnome-terminal and nm-applet then
 `polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
 gnome-settings-daemon (for `gnome-terminal`) are required.
-`xfce4-power-manager` is capable of making work most of the hotkeys. As I have
-a macbook pro, the keyboard backlight needed other little program in order to
-work. I'll be adding them little by little. As for `gnome-settings-daemon`,
-this is for avoid loosing the contrast of active tabs in `gnome-terminal`.
-Apparently, there is another way to avoid this problem of the contrast. If
-I found a solution I'll update this.
 
-As for the background, I have decided for the moments set it from theme.lua,
-I hope I can set it later from my rc.lua.
+With `xfce4-power-manager` is possible to make works most of the hotkeys.
+As for  the use of `gnome-settings-daemon`, this is for avoid loosing the 
+contrast of active tabs in `gnome-terminal`.
+
 
 Requirements
 ============
@@ -50,9 +39,19 @@ the "services launched when logging in" shown above.
 I'll put more instructions later.
 
 Install
-============
+=======
 
-To install it, you have to clone this repository in `~/.config/`
+To use these awesome configurations, you have to:
+
+1. Clone this repository in `~/.config/`:
+
+```
+cd ~/.config/
+git clone https://muammar@github.com/muammar/awesome.git
+```
+
+2. Install required programs.
+3. Log out and Log in.
 
 ## HiDPI screens
 
