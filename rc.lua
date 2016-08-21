@@ -230,7 +230,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
     -- Initialize widget
     cpuwidget2 = wibox.widget.textbox()
     -- Register widget
-    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 2)
+    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 1)
 
     -- wifi widget
     wifiwidget = wibox.widget.textbox()
