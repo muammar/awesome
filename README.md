@@ -19,24 +19,29 @@ The services launched when logging in are:
     - dispad (not mandatory).
     - dropbox (not mandatory).
 
-There are only two required components being xfce4-power-manager and volumeicon.
+There are only two **required components** being xfce4-power-manager and volumeicon.
 
-If using gnome-terminal and nm-applet then
-`polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
-gnome-settings-daemon (for `gnome-terminal`) are required.
+If using gnome-terminal and nm-applet then `polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
+gnome-settings-daemon (for `gnome-terminal`) are necessary.
 
-With `xfce4-power-manager` is possible to make works most of the hotkeys.
-As for  the use of `gnome-settings-daemon`, this is for avoid loosing the 
-contrast of active tabs in `gnome-terminal`.
+With `xfce4-power-manager` is possible to make works most of the hotkeys. As for  the use of `gnome-settings-daemon`, this is for avoid loosing the contrast of active tabs in `gnome-terminal`.
 
 
 Requirements
 ============
 
-In order of using this rc.lua you need to have installed the packages listed in
-the "services launched when logging in" shown above.
+In order of using this `rc.lua` you need to have installed the packages listed in
+the "services launched when logging in" shown above. If you want to use this configuration as it is, install the following:
 
-I'll put more instructions later.
+* gnome-terminal.
+* wicd-client.
+* gnome-settings-daemon.
+* xfce4-power-manager.
+* volumeicon.
+* dispad.
+* conky.
+* dropbox.
+* feh.
 
 Install
 =======
@@ -50,8 +55,14 @@ cd ~/.config/
 git clone https://muammar@github.com/muammar/awesome.git
 ```
 
-2. Install required programs.
-3. Log out and Log in.
+2. Install required programs, or those that you need.
+3. Change `eths` array in [line 257 of the `rc.lua`](https://github.com/muammar/awesome/blob/master/rc.lua#L257) to add your network devices.
+4. Modify `setxkbmap` to match your keyboard.
+5. Log out and Log in.
+
+## Startup applications
+
+All startup applications are located in `autostart.lua`. You can change this file to your needs.
 
 ## HiDPI screens
 
