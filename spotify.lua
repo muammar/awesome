@@ -5,7 +5,7 @@ spotify_widget = wibox.widget.textbox()
 
 function updateSpotifyWidget(widget)
   local current = awful.util.pread('bash $HOME/.config/awesome/scripts/sp current-oneline')
-  widget:set_text(' | Spotify Now Playing: '..current)
+  widget:set_markup('<span color="green"> | Spotify Now Playing: </span>'..current)
 end
 
 spotify_timer = timer ({timeout = 10})
