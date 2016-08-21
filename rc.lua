@@ -253,6 +253,9 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
 --    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlp3s0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlp3s0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlp3s0 rx_gb} GB //  ${wlp3s0 tx_gb} GB ] </span>', 1)
 --
 
+-- Spotify
+require("spotify")
+
 -- Possible network devices
 eths = { 'eth0', 'wlp3s0' }
 netwidget = wibox.widget.textbox()
@@ -297,6 +300,7 @@ vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> 
     bottom_layout:add(batwidget)
     bottom_layout:add(cpuwidget)
     bottom_layout:add(cpuwidget2)
+    bottom_layout:add(spotify_widget)
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
