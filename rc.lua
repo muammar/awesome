@@ -230,7 +230,7 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
     -- Initialize widget
     cpuwidget2 = wibox.widget.textbox()
     -- Register widget
-    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 1)
+    vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 2)
 
     -- wifi widget
     wifiwidget = wibox.widget.textbox()
@@ -242,16 +242,41 @@ vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
     ---vicious.register(weather, vicious.widgets.weather, "Weather: ${city}.  Sky: ${sky}. Temp: ${tempc}c Humid: ${humid}%. Wind: ${windkmh} KM/h", 1200, "LFBO")
 -- network widget
 
--- Initialize widget Ethernet
-ethwidget = wibox.widget.textbox()
--- Register widget
-    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 2)
+---- Initialize widget Ethernet
+--ethwidget = wibox.widget.textbox()
+---- Register widget
+--    vicious.register(ethwidget, vicious.widgets.net, 'Eth0: <span color="#CC9933">down: ${eth0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${eth0 up_kb} kB/s</span><span color="#cccccc"> [ ${eth0 rx_gb} GB //  ${eth0 tx_gb} GB ] | </span>', 2)
+--
+---- Initialize widget Wifi
+--netwidget = wibox.widget.textbox()
+---- Register widget
+--    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlp3s0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlp3s0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlp3s0 rx_gb} GB //  ${wlp3s0 tx_gb} GB ] </span>', 1)
+--
 
--- Initialize widget Wifi
+-- Possible network devices
+eths = { 'eth0', 'wlp3s0' }
 netwidget = wibox.widget.textbox()
--- Register widget
-    vicious.register(netwidget, vicious.widgets.net, 'WiFi: <span color="#CC9933">down: ${wlp3s0 down_kb} kB/s</span> <span color="#7F9F7F"> up: ${wlp3s0 up_kb} kB/s</span><span color="#cccccc"> [ ${wlp3s0 rx_gb} GB //  ${wlp3s0 tx_gb} GB ] </span>', 1)
+vicious.register( netwidget, vicious.widgets.net,
+function(widget,args)
+t=''
+for i = 1, #eths do
+e = eths[i]
+if args["{"..e.." carrier}"] == 1 then
+    if e == 'wlp3s0' then
+        t=t..'|'..'Wifi: <span color="#CC9933"> down: '..args['{'..e..' down_kb}']..' kbps</span>  <span color="#7F9F7F">up: ' ..args['{'..e..' up_kb}']..' kbps </span>'..'[ '..args['{'..e..' rx_gb}'].. ' GB // ' ..args['{'..e..' tx_gb}']..' GB ] '
+    else
+        t=t..'|'..'Eth0: <span color="#CC9933"> down: '..args['{'..e..' down_kb}']..' kbps</span>  <span color="#7F9F7F">up: ' ..args['{'..e..' up_kb}']..' kbps </span>'..'[ '..args['{'..e..' rx_gb}'].. ' GB // ' ..args['{'..e..' tx_gb}']..' GB ] '
+    end
+end
+end
+if string.len(t)>0 then -- remove leading '|'
+return string.sub(t,2,-1)
+end
+return 'No network'
+end
+, 1 )
 
+--
 -- Initialize widget date
 datewidget = wibox.widget.textbox()
 -- Register widget
@@ -264,7 +289,7 @@ vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> 
     mywibox2[s] = awful.wibox({ position = "bottom", height = "35", screen = s })
     -- Widgets that are aligned to the left
     local bottom_layout = wibox.layout.fixed.horizontal()
-    bottom_layout:add(ethwidget)
+ --   bottom_layout:add(ethwidget)
     bottom_layout:add(netwidget)
     bottom_layout:add(wifiwidget)
     bottom_layout:add(memwidget)
