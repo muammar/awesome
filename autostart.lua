@@ -1,7 +1,9 @@
--- Startup programs
---
+-- Standard awesome library
 local awful = require("awful")
 
+-- Startup programs
+--
+--
 -- Programs starting before spawn_with_shell
 --
 os.execute("gnome-terminal &")
