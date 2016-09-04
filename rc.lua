@@ -207,15 +207,6 @@ require("widgets")
 -- Spotify
 require("spotify")
 
---
--- Initialize widget date
-datewidget = wibox.widget.textbox()
--- Register widget
-vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
-
--- Initialize widget battery
-batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ] ', 60, "BAT0")
     --
     mywibox2[s] = awful.wibox({ position = "bottom", height = "35", screen = s })
     -- Widgets that are aligned to the left

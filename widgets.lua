@@ -41,7 +41,7 @@ vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 2)
 
 -- wifi widget
 wifiwidget = wibox.widget.textbox()
-vicious.register(wifiwidget, vicious.widgets.wifi, '<span color="#7F9F7F">${ssid}</span>@<span color="#7F9F7F">${linp}% | </span> ', 2, "wlp3s0")
+vicious.register(wifiwidget, vicious.widgets.wifi, 'Connected to <span color="#7F9F7F">${ssid}</span> at <span color="#7F9F7F">${linp}%</span> | ', 2, "wlp3s0")
 
 --Weather Widget
 weather = wibox.widget.textbox()
@@ -82,3 +82,13 @@ end
 return 'No network detected '
 end
 , 1 )
+
+--
+-- Initialize widget date
+datewidget = wibox.widget.textbox()
+-- Register widget
+vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
+
+-- Initialize widget battery
+batwidget = wibox.widget.textbox()
+vicious.register(batwidget, vicious.widgets.bat, ' | Bat:<span color="#CC9933"> $2% </span> [<span color="#7F9F7F"> $3</span> ] ', 60, "BAT0")
