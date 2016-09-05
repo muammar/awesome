@@ -10,7 +10,7 @@ local wibox = require("wibox")
 -- Initialize widget
 memwidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "RAM: $1% ($2MB/$3MB) ", 11)
+vicious.register(memwidget, vicious.widgets.mem, 'RAM: <span color="#7F9F7F">$1%</span> ($2MB/$3MB) ', 11)
 
 -- Initialize widget
 memwidget2 = awful.widget.progressbar()
@@ -37,7 +37,7 @@ vicious.register(cpuwidget, vicious.widgets.cpu, " $1")
 -- Initialize widget
 cpuwidget2 = wibox.widget.textbox()
 -- Register widget
-vicious.register(cpuwidget2, vicious.widgets.cpu, " CPU: $1%", 2)
+vicious.register(cpuwidget2, vicious.widgets.cpu, ' CPU: <span color="#7F9F7F">$1%</span>', 2)
 
 -- wifi widget
 wifiwidget = wibox.widget.textbox()
