@@ -57,7 +57,7 @@ git clone https://muammar@github.com/muammar/awesome.git
 
 2. Install required programs, or those that you need.
 3. Change `eths` array in [line 64 of `widgets.lua`](https://github.com/muammar/awesome/blob/master/widgets.lua#L64) to add your network devices.
-4. Modify `setxkbmap` to match your keyboard.
+4. Modify [`setxkbmap` in line 17 of `rc.lua`](https://github.com/muammar/awesome/blob/master/autostart.lua#L17) to match your keyboard.
 5. Log out and Log in.
 
 ## Startup applications
