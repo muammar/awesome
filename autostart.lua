@@ -7,9 +7,9 @@ local awful = require("awful")
 -- Programs starting before spawn_with_shell
 --
 os.execute("gnome-terminal &")
-os.execute("wicd-client -t &")
---testing os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
---os.execute("nm-applet &")
+--os.execute("wicd-client -t &")
+os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
+os.execute("nm-applet &")
 
 -- Keyboard configuration
 --
@@ -38,8 +38,8 @@ awful.util.spawn_with_shell("sleep 5; conky -c /home/$USER/.config/awesome/conky
 awful.util.spawn_with_shell("dropbox start")
 
 -- Set wallpaper and screensaver
-awful.util.spawn_with_shell("feh --bg-fill /home/$USER/.config/awesome/wallpaper/funnysystem.jpg")
---awful.util.spawn_with_shell("xscreensaver -no-splash")
+awful.util.spawn_with_shell("feh --bg-fill /home/$USER/.config/awesome/wallpaper/manbat.jpg")
+awful.util.spawn_with_shell("xscreensaver -no-splash")
 
 -- Configuration scripts and HiDPI specifics
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
