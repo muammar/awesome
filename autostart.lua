@@ -38,7 +38,7 @@ awful.util.spawn_with_shell("sleep 5; conky -c /home/$USER/.config/awesome/conky
 awful.util.spawn_with_shell("dropbox start")
 
 -- Set wallpaper and screensaver
-awful.util.spawn_with_shell("feh --bg-fill /home/$USER/.config/awesome/wallpaper/manbat.jpg")
+awful.util.spawn_with_shell("feh --bg-fill /home/$USER/.config/awesome/wallpaper/funnysystem.jpg")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 
 -- Configuration scripts and HiDPI specifics
