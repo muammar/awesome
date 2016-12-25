@@ -1,5 +1,6 @@
 -- Standard awesome library
 local awful = require("awful")
+local vicious = require("vicious")
 
 -- Widget and layout library
 local wibox = require("wibox")
