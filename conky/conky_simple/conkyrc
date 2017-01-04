@@ -74,9 +74,9 @@ DEVEL: ${alignr}${fs_free /home/muammar/devel/} / ${fs_size /home/muammar/devel/
 ${fs_bar 2 /home/muammar/devel/}
 
 ${color white}WIRED CONNECTION${hr 1}${color}
-Down ${downspeed eth0} k/s ${alignr}Up ${upspeed eth0} k/s
-${downspeedgraph eth0 25,107} ${alignr}${upspeedgraph eth0 25,107}
-Total ${totaldown eth0} ${alignr}Total ${totalup eth0}
+Down ${downspeed ens9} k/s ${alignr}Up ${upspeed ens9} k/s
+${downspeedgraph ens9 25,107} ${alignr}${upspeedgraph ens9 25,107}
+Total ${totaldown ens9} ${alignr}Total ${totalup ens9}
 
 ${color white}WIFI CONNECTION ${hr 1}${color}
 Down ${downspeed wlp3s0} k/s ${alignr}Up ${upspeed wlp3s0} k/s
