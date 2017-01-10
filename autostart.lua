@@ -43,5 +43,5 @@ awful.util.spawn_with_shell("xscreensaver -no-splash")
 
 -- Configuration scripts and HiDPI specifics
 awful.util.spawn_with_shell("/home/$USER/.config/awesome/scripts/xmodmapawesome")
-awful.util.spawn_with_shell("xrdb -merge /home/$USER/.config/awesome/scripts/Xdefaults.hidpi")
+awful.util.spawn_with_shell("sleep 10; xrdb -merge /home/$USER/.config/awesome/scripts/Xdefaults.hidpi")
 --awful.util.spawn_with_shell("sh ~/.config/awesome/scripts/monitorretina")
