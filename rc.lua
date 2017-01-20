@@ -11,6 +11,9 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 
+-- Vicious
+local vicious = require("vicious")
+
 -- Load Debian menu entries
 require("debian.menu")
 
@@ -204,6 +207,11 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Create the wibox on top
     s.mywibox = awful.wibar({ position = "top", screen = s })
+    -- First load the widgets
+    -- Widgets in ~/.config/awesome/widgets.lua
+    require("widgets")
+    -- Spotify
+    require("spotify")
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -219,17 +227,13 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             wibox.widget.systray(),
+            weather,
             mytextclock,
             s.mylayoutbox,
         },
     }
 
     -- Create the wibox on bottom
-    -- First load the widgets
-    -- Widgets in ~/.config/awesome/widgets.lua
-    require("widgets")
-    -- Spotify
-    require("spotify")
 
     -- Widgets that are aligned to the left
     s.mywibox2 = awful.wibar({ position = "bottom", screen = s })

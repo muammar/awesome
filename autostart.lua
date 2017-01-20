@@ -9,7 +9,6 @@ local awful = require("awful")
 os.execute("gnome-terminal &")
 --os.execute("wicd-client -t &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
-os.execute("sleep 30; nm-applet &")
 
 -- Keyboard configuration
 --
@@ -22,6 +21,8 @@ os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_ca
 awful.util.spawn_with_shell("gnome-settings-daemon")
 --testing awful.util.spawn_with_shell("gnome-keyring-daemon")
 
+-- Network applet
+awful.util.spawn_with_shell("sleep 30; nm-applet &")
 -- Power management
 awful.util.spawn_with_shell("xfce4-power-manager")
 
