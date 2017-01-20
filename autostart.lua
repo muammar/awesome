@@ -22,7 +22,7 @@ awful.util.spawn_with_shell("gnome-settings-daemon")
 --testing awful.util.spawn_with_shell("gnome-keyring-daemon")
 
 -- Network applet
-awful.util.spawn_with_shell("sleep 30; nm-applet &")
+awful.util.spawn_with_shell("sleep 30; nm-applet")
 -- Power management
 awful.util.spawn_with_shell("xfce4-power-manager")
 
