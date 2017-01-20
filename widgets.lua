@@ -23,7 +23,7 @@ memwidget2:set_border_color(nil)
 memwidget2:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#AECF96"}, {0.5, "#88A175"},
                     {1, "#FF5656"}}})
 -- Register widget
-vicious.register(memwidget2, vicious.widgets.mem, "$1", 13)
+vicious.register(memwidget2, vicious.widgets.mem, "$1", 10)
 
 -- Initialize widget
 cpuwidget = awful.widget.graph()
@@ -38,7 +38,7 @@ vicious.register(cpuwidget, vicious.widgets.cpu, " $1")
 -- Initialize widget
 cpuwidget2 = wibox.widget.textbox()
 -- Register widget
-vicious.register(cpuwidget2, vicious.widgets.cpu, ' CPU: <span color="#CC9933">$1%</span>', 2)
+vicious.register(cpuwidget2, vicious.widgets.cpu, ' CPU: <span color="#CC9933">$1%</span>', 1)
 
 -- wifi widget
 wifiwidget = wibox.widget.textbox()
