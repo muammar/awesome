@@ -9,7 +9,7 @@ local awful = require("awful")
 os.execute("gnome-terminal &")
 --os.execute("wicd-client -t &")
 os.execute("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &")
-os.execute("nm-applet &")
+os.execute("sleep 30; nm-applet &")
 
 -- Keyboard configuration
 --
