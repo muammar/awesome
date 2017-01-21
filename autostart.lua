@@ -28,7 +28,7 @@ spawn.with_shell("sleep 3; nm-applet")
 spawn.with_shell("xfce4-power-manager")
 
 -- Volume icon
-spawn.with_shell("volumeicon")
+spawn.with_shell("sleep 3; volumeicon")
 
 -- Deactivate keyboard while typing
 spawn.with_shell("rm ~/.dispad.pid; dispad -F")
