@@ -14,7 +14,7 @@ memwidget = wibox.widget.textbox()
 vicious.register(memwidget, vicious.widgets.mem, 'RAM: <span color="#CC9933">$1%</span> ($2MB/$3MB) ', 11)
 
 -- Initialize widget
-memwidget2 = awful.widget.progressbar()
+memwidget2 = wibox.widget.progressbar()
 -- Progressbar properties
 memwidget2:set_width(50)
 memwidget2:set_vertical(true)
