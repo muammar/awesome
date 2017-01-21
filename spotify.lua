@@ -2,12 +2,13 @@ local wibox = require("wibox")
 local awful = require("awful")
 
 spotify_widget = wibox.widget.textbox()
+spotify_widget:set_font('Play 9')
 
 function updateSpotifyWidget(widget)
-    local file = assert(io.popen('bash $HOME/.config/awesome/scripts/sp current-oneline', 'r'))
-    local current = file:read('*all')
-    file:close()
-    widget:set_text(' | Spotify Now Playing: '..current)
+    awful.spawn.easy_async([[bash -c '$HOME/.config/awesome/scripts/sp current-oneline']],
+    function(stdout, stderr, reason, exit_code)
+        widget:set_text(' | Spotify Now Playing: '..stdout)
+    end)
 end
 
 spotify_timer = timer ({timeout = 10})
