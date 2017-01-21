@@ -2,7 +2,7 @@ local wibox = require("wibox")
 local awful = require("awful")
 
 spotify_widget = wibox.widget.textbox()
-spotify_widget:set_font('Play 9')
+spotify_widget:set_font('Play 8')
 
 function updateSpotifyWidget(widget)
     awful.spawn.easy_async([[bash -c '$HOME/.config/awesome/scripts/sp current-oneline']],
