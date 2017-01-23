@@ -66,22 +66,7 @@ All startup applications are located in `autostart.lua`. You can change this fil
 
 ## HiDPI screens
 
-There is a way to make this work for the macbook pro 13" retina 2015. Three
-changes are needed:
-
-* One has to change the `height` of the wibox in `rc.lua`:
-
-Example:
-
-```
-mywibox[s] = awful.wibox({ position = "top", height = "34", screen = s })
-```
-
-* Change the `theme.font` size in
-   `/usr/share/awesome/themes/<yourtheme>/theme.lua` to `16`.
-
-**Note**: these settings shouldn't play well with external monitors, and they
-    are far from being perfect.
+As of awesome wm 4.0, scaling is done properly. The only required change you may do is related to the scaling factor. In my case, as I use gnome, I change it as shown below.
     
 * Change the scaling factor for Gnome applications:
 
