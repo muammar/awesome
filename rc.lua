@@ -42,6 +42,11 @@ do
 end
 -- }}}
 
+-- Icon size
+-- This makes the size of notifications to be reduced in size.
+
+naughty.config.defaults['icon_size'] = 100
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
