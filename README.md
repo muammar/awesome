@@ -56,6 +56,13 @@ git clone https://muammar@github.com/muammar/awesome.git
 ```
 
 2. Install required programs, or those that you need.
+
+On Debian based systems:
+
+```
+sudo apt install xfce4-power-manager volumeicon-alsa xscreensaver policykit-1-gnome gnome-settings-daemon network-manager-gnome conky
+```
+
 3. Change `eths` array in [line 64 of `widgets.lua`](https://github.com/muammar/awesome/blob/master/widgets.lua#L64) to add your network devices.
 4. Modify [`setxkbmap` in line 17 of `rc.lua`](https://github.com/muammar/awesome/blob/master/autostart.lua#L17) to match your keyboard.
 5. Log out and Log in.
@@ -67,7 +74,7 @@ All startup applications are located in `autostart.lua`. You can change this fil
 ## HiDPI screens
 
 As of awesome wm 4.0, scaling is done properly. The only required change you may do is related to the scaling factor. In my case, as I use gnome, I change it as shown below.
-    
+
 * Change the scaling factor for Gnome applications:
 
 ```
