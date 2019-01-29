@@ -2,7 +2,7 @@ awesome
 =======
 
 This is my rc.lua file for the windows manager awesome. I use this
-configuration in my Macbook Pro 13" (Retina) running Debian unstable.
+configuration on many of my machines running Debian unstable.
 
 The services launched when logging in are:
 
