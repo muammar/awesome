@@ -1,34 +1,37 @@
-background yes
-font Sans:size=8.9
-#xftfont Sans:size=10
-use_xft yes
-xftalpha 0.9
-update_interval 3.0
-total_run_times 0
-own_window yes
-own_window_type override
-own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-double_buffer yes
-minimum_size 220 5
-maximum_width 440
-draw_shades yes
-draw_outline no
-draw_borders no
-draw_graph_borders yes
-default_color white
-default_shade_color black
-default_outline_color green
-alignment top_right
-gap_x 12
-gap_y 45
-no_buffers yes
-uppercase no
-cpu_avg_samples 2
-override_utf8_locale yes
-uppercase yes # set to yes if you want all text to be in uppercase
+conky.config = {
+	background = true,
+	font = 'Sans:size=8.9',
+--xftfont Sans:size=10
+	use_xft = true,
+	xftalpha = 0.9,
+	update_interval = 3.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	minimum_width = 220, minimum_height = 5,
+	maximum_width = 440,
+	draw_shades = true,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	default_color = 'white',
+	default_shade_color = 'black',
+	default_outline_color = 'green',
+	alignment = 'top_right',
+	gap_x = 12,
+	gap_y = 45,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	override_utf8_locale = true,
+	uppercase = true,-- set to yes if you want all text to be in uppercase
 
-TEXT
+};
+
+conky.text = [[
 ${color white}SYSTEM ${hr 1}${color}
 
 Hostname: $alignr$nodename
@@ -85,3 +88,4 @@ Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
 #${color white}WEATHER ${hr 1}${color}
 #
 #${execi 1800 /home/muammar/.conky/conky_simple/weather.sh SWXX0006}
+]];
