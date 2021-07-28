@@ -1,7 +1,7 @@
 awesome
 =======
 
-This is my rc.lua file for the windows manager awesome. I use this
+My rc.lua file for the windows manager `awesome`. I use this
 configuration on many of my machines running Debian unstable.
 
 The services launched when logging in are:
@@ -24,14 +24,14 @@ There are only two **required components** being xfce4-power-manager and volumei
 If using gnome-terminal and nm-applet then `polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
 gnome-settings-daemon (for `gnome-terminal`) are necessary.
 
-With `xfce4-power-manager` is possible to make works most of the hotkeys. As for  the use of `gnome-settings-daemon`, this is for avoid loosing the contrast of active tabs in `gnome-terminal`.
+With `xfce4-power-manager`, it is possible to make works most of the hotkeys. As for the use of `gnome-settings-daemon`, this is to avoid losing the contrast of active tabs in `gnome-terminal`.
 
 
 Requirements
 ============
 
-In order of using this `rc.lua` you need to have installed the packages listed in
-the "services launched when logging in" shown above. If you want to use this configuration as it is, install the following:
+To use this `rc.lua`, you need to install the packages listed in
+the "services launched when logging in" shown above. If you want to use this configuration as it is, installs the following:
 
 * gnome-terminal.
 * wicd-client.
@@ -46,7 +46,7 @@ the "services launched when logging in" shown above. If you want to use this con
 Install
 =======
 
-To use these awesome configurations, you have to:
+To use these `awesome`'s configurations, you have to:
 
 1. Clone this repository in `~/.config/`:
 
@@ -55,7 +55,7 @@ cd ~/.config/
 git clone https://muammar@github.com/muammar/awesome.git
 ```
 
-2. Install required programs, or those that you need.
+2. Install required programs or those that you need.
 
 On Debian based systems:
 
@@ -69,11 +69,11 @@ sudo apt install xfce4-power-manager volumeicon-alsa xscreensaver policykit-1-gn
 
 ## Startup applications
 
-All startup applications are located in `autostart.lua`. You can change this file to your needs.
+All startup applications are in `autostart.lua`. You can change this file to your needs.
 
 ## HiDPI screens
 
-As of awesome wm 4.0, scaling is done properly. The only required change you may do is related to the scaling factor. In my case, as I use gnome, I change it as shown below.
+As of awesome wm 4.0, the WM appropriately manages the scaling of the screen. The only necessary change you may do is related to the scaling factor. In my case, as I use gnome, I change it as shown below.
 
 * Change the scaling factor for Gnome applications:
 
