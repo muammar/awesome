@@ -11,8 +11,9 @@ conky.config = {
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	double_buffer = true,
-	minimum_width = 220, minimum_height = 5,
-	maximum_width = 440,
+	minimum_width = 320,
+        minimum_height = 5,
+	maximum_width = 840,
 	draw_shades = true,
 	draw_outline = false,
 	draw_borders = false,
@@ -32,6 +33,16 @@ conky.config = {
 };
 
 conky.text = [[
+${color white}WEATHER ${hr 1}${color}
+
+
+${texeci 1800 curl wttr.in/_0pq_lang=us.png | convert - -transparent black /tmp/weather.png}
+
+${image /tmp/weather.png -p 0,0}
+
+
+
+
 ${color white}SYSTEM ${hr 1}${color}
 
 Hostname: $alignr$nodename
