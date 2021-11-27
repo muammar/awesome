@@ -24,14 +24,14 @@ There are only two **required components** being xfce4-power-manager and volumei
 If using gnome-terminal and nm-applet then `polkit-gnome-authentication-agent-1` (for `nm-applet`) , and
 gnome-settings-daemon (for `gnome-terminal`) are necessary.
 
-With `xfce4-power-manager`, it is possible to make works most of the hotkeys. As for the use of `gnome-settings-daemon`, this is to avoid losing the contrast of active tabs in `gnome-terminal`.
+With `xfce4-power-manager`, it is possible to make works most of the hotkeys. The use of `gnome-settings-daemon` avoids losing the contrast of active tabs in `gnome-terminal`.
 
 
 Requirements
 ============
 
-To use this `rc.lua`, you need to install the packages listed in
-the "services launched when logging in" shown above. If you want to use this configuration as it is, installs the following:
+To use this `rc.lua`, you must install the packages listed in
+the "services launched when logging in" shown above. If you want to use this configuration as it is, install the following:
 
 * gnome-terminal.
 * wicd-client.
@@ -63,8 +63,8 @@ On Debian based systems:
 sudo apt install xfce4-power-manager volumeicon-alsa xscreensaver policykit-1-gnome gnome-settings-daemon network-manager-gnome conky
 ```
 
-3. Change `eths` array in [line 64 of `widgets.lua`](https://github.com/muammar/awesome/blob/master/widgets.lua#L64) to add your network devices.
-4. Modify [`setxkbmap` in line 17 of `rc.lua`](https://github.com/muammar/awesome/blob/master/autostart.lua#L17) to match your keyboard.
+3. Change `eths` array in [line 87 of `widgets.lua`](https://github.com/muammar/awesome/blob/master/widgets.lua#L87) to add your network devices.
+4. Modify [`setxkbmap` in line 15 of `rc.lua`](https://github.com/muammar/awesome/blob/master/autostart.lua#L15) to match your keyboard.
 5. Log out and Log in.
 
 ## Startup applications
