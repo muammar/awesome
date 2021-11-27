@@ -16,7 +16,7 @@ os.execute("setxkbmap -model pc105 -layout us -variant intl -option grp:shift_ca
 
 -- Programs starting with spawn_with_shell
 -- Gnome components
-spawn.with_shell("/usr/lib/gnome-settings-daemon/gsd-xsettings")
+spawn.with_shell("/usr/libexec/gsd-xsettings")
 --testing spawn.with_shell("gnome-keyring-daemon")
 
 -- Network applet
